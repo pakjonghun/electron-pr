@@ -8,5 +8,22 @@
   </head>
   <body>
     <h1>hi</h1>
+    <form id="form">
+      <label for="video">select a video</label>
+      <input id="video" type="file" accept="video/*" />
+      <label for="audio">select a audio</label>
+      <input id="audio" type="file" accept="video/*" />
+      <button type=""submit">제출</button>
+    </form>
+    <script >
+      const form = document.getElementById("form");
+      form.addEventListener("submit",e=>{
+        e.preventDefault();
+        const file = document.querySelector("input").files[0];
+        if(file){
+          //
+        }
+      })
+    </script>
   </body>
 </html>
