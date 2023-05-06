@@ -1,0 +1,21 @@
+<head></head>
+<body>
+  <form>
+    <div>
+      <label>할일</label>
+      <input autofocus />
+    </div>
+    <button type="submit">add</button>
+  </form>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = document.querySelector('input').value;
+      console.log(v);
+      ipcRenderer.send('todo:add', v);
+    });
+  </script>
+</body>
